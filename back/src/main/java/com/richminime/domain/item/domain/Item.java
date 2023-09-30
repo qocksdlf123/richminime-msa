@@ -38,8 +38,8 @@ public class Item {
 
     @Column(name = "price", nullable = false)
     private Long price;
-    
-    @OneToMany(mappedBy = "item")
+
+    @OneToMany(mappedBy = "item", cascade = CascadeType.REMOVE)
     private List<UserItem> userItems; // 하나의 아이템(청치마)를 산 유저가 많으니까
 
     public void updateItem(ItemUpdateReqDto itemUpdateReqDto) {
