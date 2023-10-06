@@ -52,5 +52,11 @@ public class ItemQueryDslRepository {
                 .or(userItem.item.itemName.endsWith(name));
     }
 
+//    private BooleanExpression isOwnedItem(Long userId) {
+//        if(userId == null)
+//            return null;
+//
+//        return item.price.
+//    }
 
 }
