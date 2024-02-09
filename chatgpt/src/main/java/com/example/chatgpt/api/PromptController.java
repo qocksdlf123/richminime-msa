@@ -1,8 +1,8 @@
 package com.example.chatgpt.api;
 
-import com.richminime.domain.gpt.dto.PromptReqDto;
-import com.richminime.domain.gpt.dto.PromptResDto;
-import com.richminime.domain.gpt.service.PromptService;
+import com.example.chatgpt.dto.PromptReqDto;
+import com.example.chatgpt.dto.PromptResDto;
+import com.example.chatgpt.service.PromptService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

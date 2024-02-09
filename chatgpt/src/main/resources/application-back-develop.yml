@@ -32,7 +32,7 @@ spring:
     password: ''
     username: sa
     hikari:
-      jdbc-url: jdbc:h2:tcp://localhost/~/richMinime
+      jdbc-url: jdbc:h2:tcp://localhost/~/prompt
   h2:
     console:
       path: /h2-console
@@ -57,6 +57,8 @@ spring:
   redis:
     host: localhost
     port: 6379
+  application:
+    name: gpt
 logging:
   level:
     org:
@@ -78,7 +80,7 @@ server:
       charset: UTF-8
     contextPath: /api
   address: 0.0.0.0
-  port: 8080
+  port: 0 # 랜덤포트
   compression:
     enabled: true
     mime-types: application/json,application/xml,text/html,text/xml,text/plain,application/javascript,text/css
@@ -101,3 +103,12 @@ gpt:
   api-key: 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
 
 
+
+eureka:
+  instance:
+    instance-id: 
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka

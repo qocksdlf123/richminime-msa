@@ -52,7 +52,7 @@ public class CodefWebClient {
 
     private WebClient devWebClient;
 
-    @PostConstruct
+//    @PostConstruct
     public void init() {
         // 서비스 시작 시 액세스 토큰 발급
         log.info("authHeader -------------------------------------->{}", authHeader);

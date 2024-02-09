@@ -1,10 +1,9 @@
 package com.example.chatgpt.service;
 
-import com.richminime.domain.gpt.dao.PromptRepository;
-import com.richminime.domain.gpt.domain.Prompt;
-import com.richminime.domain.gpt.dto.PromptReqDto;
-import com.richminime.domain.gpt.dto.PromptResDto;
-import com.richminime.global.util.SecurityUtils;
+import com.example.chatgpt.dao.PromptRepository;
+import com.example.chatgpt.domain.Prompt;
+import com.example.chatgpt.dto.PromptReqDto;
+import com.example.chatgpt.dto.PromptResDto;
 import lombok.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
@@ -24,7 +23,7 @@ import java.util.Map;
 public class PromptServiceImpl implements PromptService {
 
     private final PromptRepository promptRepository;
-    private final SecurityUtils securityUtils;
+//    private final SecurityUtils securityUtils;
     @Value("${gpt.api-key}")
     private String apikey;
 
@@ -36,7 +35,9 @@ public class PromptServiceImpl implements PromptService {
         httpheaders.setContentType(MediaType.APPLICATION_JSON);
         httpheaders.set("Authorization","Bearer " + apikey);
         //추후 시큐리티 완료 되면 getUser()로 대체
-        List<Prompt> prompts = promptRepository.findByUser_UserId(securityUtils.getUserNo());
+//        List<Prompt> prompts = promptRepository.findByUser_UserId(securityUtils.getUserNo());
+        List<Prompt> prompts = promptRepository.findByUserId(1L);     //임시 대체, 추후 user 마이크로서비스 구현 시 FeignClinet로 호출
+
         List<Message> messages = new ArrayList<>();
         Message systemMessage = new Message("system","너는 은행 상담원이야");
         messages.add(systemMessage);

@@ -1,6 +1,5 @@
 package com.example.chatgpt.domain;
 
-import com.richminime.domain.user.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,10 +17,13 @@ public class Prompt {
     @Column(name = "prompt_id")
     private Long promptId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "userId")
-    private User user;
-
+    /*  msa에서는 fetch join 불가
+        @ManyToOne(fetch = FetchType.LAZY)
+        @JoinColumn(name = "userId")
+        private User user;
+    */
+    @Column(name = "user_id")
+    private Long userId;
 
     /*
         role : 메시지를 보낸 주체로 3가지로 나뉜다
