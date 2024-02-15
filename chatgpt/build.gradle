@@ -31,6 +31,10 @@ dependencies {
 	runtimeOnly 'com.h2database:h2'
 	//mariadb
 	implementation 'org.mariadb.jdbc:mariadb-java-client:3.2.0'
+	// spring cloud config
+	implementation 'org.springframework.cloud:spring-cloud-starter-config'
+	// spring cloud bootstrap
+	implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
 }
 
 dependencyManagement {

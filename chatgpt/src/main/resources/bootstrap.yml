@@ -1,0 +1,22 @@
+#spring:
+#  profiles:
+#     active: back-develop
+##   active: develop
+
+spring:
+  cloud:
+    config:
+      uri: http://127.0.0.1:8888
+      name: application
+  profiles:
+#    active: develop   #배포용
+    active: back-develop   #로컬용
+
+eureka:
+  instance:
+    instance-id:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
