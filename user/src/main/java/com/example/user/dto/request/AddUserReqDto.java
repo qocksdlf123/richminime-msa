@@ -1,7 +1,7 @@
-package com.richminime.domain.user.dto.request;
+package com.example.user.dto.request;
 
-import com.richminime.domain.user.domain.User;
-import com.richminime.domain.user.domain.UserType;
+import com.example.user.domain.User;
+import com.example.user.domain.UserType;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;

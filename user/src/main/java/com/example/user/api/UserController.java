@@ -1,9 +1,10 @@
-package com.richminime.domain.user.api;
+package com.example.user.api;
 
-import com.richminime.domain.user.dto.request.*;
-import com.richminime.domain.user.dto.response.*;
-import com.richminime.domain.user.service.UserService;
-import com.richminime.global.common.jwt.JwtHeaderUtilEnums;
+//import com.richminime.domain.user.dto.request.*;
+import com.example.user.dto.request.*;
+import com.example.user.dto.response.*;
+import com.example.user.service.UserService;
+import com.example.user.config.common.jwt.JwtHeaderUtilEnums;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

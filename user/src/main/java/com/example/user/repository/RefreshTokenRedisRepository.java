@@ -1,6 +1,6 @@
-package com.richminime.domain.user.repository;
+package com.example.user.repository;
 
-import com.richminime.domain.user.domain.RefreshToken;
+import com.example.user.domain.RefreshToken;
 import org.springframework.data.repository.CrudRepository;
 
 

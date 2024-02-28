@@ -1,4 +1,4 @@
-package com.richminime.domain.user.dto.response;
+package com.example.user.dto.response;
 
 import lombok.Builder;
 import lombok.Getter;

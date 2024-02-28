@@ -1,7 +1,8 @@
-package com.richminime.domain.user.service;
+package com.example.user.service;
 
-import com.richminime.domain.user.dto.request.*;
-import com.richminime.domain.user.dto.response.*;
+
+import com.example.user.dto.request.*;
+import com.example.user.dto.response.*;
 
 import java.util.List;
 import java.util.Map;

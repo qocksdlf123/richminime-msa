@@ -1,6 +1,5 @@
-package com.richminime.domain.user.exception;
+package com.example.user.exception;
 
-import com.richminime.domain.bankBook.constant.BankBookResponseMessage;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

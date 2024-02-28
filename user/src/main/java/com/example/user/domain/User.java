@@ -1,20 +1,18 @@
-package com.richminime.domain.user.domain;
+package com.example.user.domain;
 
 
-import com.richminime.domain.character.domain.Character;
-import com.richminime.domain.gpt.domain.Prompt;
-import com.richminime.domain.room.domain.Room;
-import com.richminime.domain.user.dto.request.UpdateUserReqDto;
+import com.example.user.dto.request.UpdateUserReqDto;
+//import com.richminime.domain.gpt.domain.Prompt;
+//import com.richminime.domain.room.domain.Room;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;
-import com.richminime.domain.gpt.domain.Prompt;
+
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -58,13 +56,14 @@ public class User {
 
 
     //user 엔티티가 삭제 즉 회원탈퇴하면 그에 상응하는 character 엔티티도 삭제됨
-    @OneToOne(mappedBy = "user",cascade = CascadeType.REMOVE)
-//    @OneToOne(mappedBy = "user")
-    private Character character;
+//    @OneToOne(mappedBy = "user",cascade = CascadeType.REMOVE)
+//    private Character character;
+
+    private Long characterId;   //MSA
     //user 엔티티가 삭제 즉 회원탈퇴하면 그에 상응하는 room 엔티티도 삭제됨
-    @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE)
-//    @OneToOne(mappedBy = "user")
-    private List<Room> rooms = new ArrayList<>();
+//    @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE)
+//    private List<Room> rooms = new ArrayList<>();
+    private Long roomId;    //MSA
 
     @Column(name = "clothing_count", nullable = false)
     @ColumnDefault("0")
@@ -78,8 +77,9 @@ public class User {
 //    @Column(nullable = false)
 //    private Date birthDate;
 
-    @OneToMany(mappedBy = "user")
-    private List<Prompt> prompts = new ArrayList<>();
+//    @OneToMany(mappedBy = "user")
+//    private List<Prompt> prompts = new ArrayList<>();
+
 
     @Builder
     public User(String email, String password, String nickname, String connectedId, String organizationCode, String cardNumber, String userType) {

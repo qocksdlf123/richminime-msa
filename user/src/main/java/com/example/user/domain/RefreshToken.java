@@ -1,4 +1,4 @@
-package com.richminime.domain.user.domain;
+package com.example.user.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

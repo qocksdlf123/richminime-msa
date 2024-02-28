@@ -1,4 +1,4 @@
-package com.richminime.domain.user.dto.request;
+package com.example.user.dto.request;
 
 import lombok.Getter;
 import lombok.Setter;

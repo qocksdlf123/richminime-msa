@@ -1,6 +1,6 @@
-package com.richminime.domain.user.repository;
+package com.example.user.repository;
 
-import com.richminime.domain.user.domain.User;
+import com.example.user.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
