@@ -2,19 +2,23 @@
 #  profiles:
 #     active: back-develop
 ##   active: develop
-
+server:
+  port: 8092
 spring:
   cloud:
     config:
       uri: http://127.0.0.1:8888
       name: application
+      override-none: true
   profiles:
 #    active: develop   #배포용
     active: back-develop   #로컬용
 
+  application:
+    name: prompt
 eureka:
   instance:
-    instance-id:
+    instance-id: prompt
   client:
     register-with-eureka: true
     fetch-registry: true

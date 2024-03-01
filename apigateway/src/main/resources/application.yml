@@ -1,7 +1,51 @@
+server:
+  port: 28000
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka    #추후 배포용으로
+
 spring:
   application:
     name: gateway-service
   cloud:
     gateway:
       routes:
-        - id:
+        - id: user
+          uri: lb://USER
+          predicates:
+            - Path=/user/**
+          filters:
+            - RewritePath=/user/(?<segment>.*), /$\{segment}
+        - id: prompt
+          uri: lb://prompt
+          predicates:
+            - Path=/prompt/**
+          filters:
+            - RewritePath=/prompt/(?<segment>.*), /$\{segment}
+        - id: bankbook
+          uri: lb://bankbook
+          predicates:
+            - Path=/bankbook/**
+          filters:
+            - RewritePath=/bankbook/(?<segment>.*), /$\{segment}
+        - id: character
+          uri: lb://character
+          predicates:
+            - Path=/character/**
+          filters:
+            - RewritePath=/character/(?<segment>.*), /$\{segment}
+        - id: prompt
+          uri: lb://prompt
+          predicates:
+            - Path=/prompt/**
+          filters:
+            - RewritePath=/prompt/(?<segment>.*), /$\{segment}
+        - id: prompt
+          uri: lb://prompt
+          predicates:
+            - Path=/prompt/**
+          filters:
+            - RewritePath=/prompt/(?<segment>.*), /$\{segment}
